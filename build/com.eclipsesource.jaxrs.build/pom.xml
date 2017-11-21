@@ -19,11 +19,11 @@
 	  <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tycho-version>0.24.0</tycho-version>
-		<tycho-extras-version>0.24.0</tycho-extras-version>
+		<tycho-version>1.0.0</tycho-version>
+		<tycho-extras-version>1.0.0</tycho-extras-version>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<surefire-version>2.18</surefire-version>
-		<findbugs-version>2.5.5</findbugs-version>
+		<findbugs-version>3.0.1</findbugs-version>
 		<junit-version>4.11</junit-version>
 		<mockito-version>1.9.5</mockito-version>
 		<jacocoagent>${basedir}/../../build/com.eclipsesource.jaxrs.build/lib/jacocoagent.jar</jacocoagent>
@@ -115,7 +115,7 @@
 							<groupId>${project.groupId}</groupId>
 							<artifactId>${project.artifactId}</artifactId>
 							<version>${project.version}</version>
-							<classifier>${project.parent.relativePath}/../com.eclipsesource.jaxrs.connector.target/Equinox-3.6-jersey2.22</classifier>
+							<classifier>${project.parent.relativePath}/../com.eclipsesource.jaxrs.connector.target/Equinox-3.10-jersey2.22</classifier>
 						</artifact>
 					</target>
 					<environments>
@@ -158,19 +158,19 @@
 				</executions>
 			</plugin>
 			
-			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!-- 			<plugin> -->
+<!--         <groupId>org.apache.maven.plugins</groupId> -->
+<!--         <artifactId>maven-javadoc-plugin</artifactId> -->
+<!--         <version>2.10</version> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>attach-javadocs</id> -->
+<!--             <goals> -->
+<!--               <goal>jar</goal> -->
+<!--             </goals> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
 
 		</plugins>
 	</build>

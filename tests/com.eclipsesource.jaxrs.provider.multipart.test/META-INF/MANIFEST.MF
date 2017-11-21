@@ -6,8 +6,8 @@ Bundle-Version: 2.2.0.qualifier
 Bundle-Vendor: EclipseSource
 Fragment-Host: com.eclipsesource.jaxrs.provider.multipart;bundle-version="2.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: org.mockito.mockito-all;bundle-version="1.9.5",
- org.junit;bundle-version="4.10.0"
+Require-Bundle: org.junit;bundle-version="4.10.0",
+ org.mockito;bundle-version="1.9.5"
 Import-Package: com.google.common.base,
  org.glassfish.hk2.utilities,
  org.glassfish.hk2.utilities.cache,
