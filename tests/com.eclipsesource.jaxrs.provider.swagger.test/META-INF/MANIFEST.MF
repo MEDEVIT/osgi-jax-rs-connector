@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Swagger Provider Test
 Bundle-SymbolicName: com.eclipsesource.jaxrs.provider.swagger.test
-Bundle-Version: 1.1.1.qualifier
+Bundle-Version: 1.1.2.qualifier
 Bundle-Vendor: EclipseSource
-Fragment-Host: com.eclipsesource.jaxrs.provider.swagger;bundle-version="1.1.1"
+Fragment-Host: com.eclipsesource.jaxrs.provider.swagger;bundle-version="1.1.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.junit;bundle-version="4.10.0",
  org.mockito;bundle-version="1.9.5"

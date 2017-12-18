@@ -1,12 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2015 EclipseSource and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * Copyright (c) 2015 EclipseSource and others. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *    Holger Staudacher - initial API and implementation
+ * http://www.eclipse.org/legal/epl-v10.html Contributors:<br>
+ * Holger Staudacher - initial API and implementation <br>
+ * Marco Descher - extract constants, add security definitions configuration
  ******************************************************************************/
 package com.eclipsesource.jaxrs.provider.swagger.internal;
 
@@ -46,6 +44,8 @@ public class OSGiJaxRsScanner extends DefaultJaxrsScanner implements SwaggerConf
     swagger.setInfo( swaggerConfiguration.getInfo() );
     swagger.setBasePath( swaggerConfiguration.getBasePath() );
     swagger.setHost( swaggerConfiguration.getHost() );
+    swagger.setSchemes( swaggerConfiguration.getSchemes() );
+    swagger.setSecurityDefinitions( swaggerConfiguration.getSecurityDefinitions() );
     return swagger;
   }
 
@@ -53,5 +53,4 @@ public class OSGiJaxRsScanner extends DefaultJaxrsScanner implements SwaggerConf
   public String getFilterClass() {
     return swaggerConfiguration.getFilterClass();
   }
-
 }
