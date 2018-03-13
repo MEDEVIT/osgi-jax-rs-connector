@@ -26,6 +26,7 @@ import static com.eclipsesource.jaxrs.provider.swagger.SwaggerConfigurationConst
 import static com.eclipsesource.jaxrs.provider.swagger.SwaggerConfigurationConstants.PROPERTY_SCHEME_WS;
 import static com.eclipsesource.jaxrs.provider.swagger.SwaggerConfigurationConstants.PROPERTY_SCHEME_WSS;
 import static com.eclipsesource.jaxrs.provider.swagger.SwaggerConfigurationConstants.SECURITY_DEFINITION_PREFIX;
+import static com.eclipsesource.jaxrs.provider.swagger.SwaggerConfigurationConstants.SECURITY_DEFINITION_TYPE;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -213,8 +214,8 @@ public class SwaggerConfiguration implements ManagedService {
     Enumeration<String> keys = configuration.keys();
     while( keys.hasMoreElements() ) {
       String key = keys.nextElement();
-      if( key.startsWith( "swagger.securityDefinition.type." ) ) {
-        String authSchemeName = key.substring( "swagger.securityDefinition.type.".length() );
+      if( key.startsWith( SECURITY_DEFINITION_TYPE ) ) {
+        String authSchemeName = key.substring( SECURITY_DEFINITION_TYPE.length() );
         String authSchemeType = ( String )configuration.get( key );
         SecuritySchemeDefinition securitySchemeDefinition = null;
         if( new OAuth2Definition().getType().equals( authSchemeType ) ) {

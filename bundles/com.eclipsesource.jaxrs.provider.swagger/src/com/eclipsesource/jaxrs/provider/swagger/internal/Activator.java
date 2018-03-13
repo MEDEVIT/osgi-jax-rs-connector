@@ -30,7 +30,7 @@ import io.swagger.jaxrs.listing.SwaggerSerializers;
 
 public class Activator implements BundleActivator {
 
-  private final List<ServiceRegistration> registrations;
+  private final List<ServiceRegistration<?>> registrations;
 
   public Activator() {
     registrations = new ArrayList<>();
@@ -55,7 +55,7 @@ public class Activator implements BundleActivator {
 
   @Override
   public void stop( BundleContext bundleContext ) throws Exception {
-    for( ServiceRegistration registration : registrations ) {
+    for( ServiceRegistration<?> registration : registrations ) {
       registration.unregister();
     }
     registrations.clear();
