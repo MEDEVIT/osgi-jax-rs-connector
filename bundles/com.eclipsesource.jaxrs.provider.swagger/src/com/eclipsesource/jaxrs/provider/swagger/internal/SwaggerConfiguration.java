@@ -156,25 +156,27 @@ public class SwaggerConfiguration implements ManagedService {
 
   public Map<String, SecuritySchemeDefinition> getSecurityDefinitions() {
     Map<String, SecuritySchemeDefinition> securityDefinitions = new HashMap<>();
-    determineConfiguredSecuritySchemeDefinitions( securityDefinitions );
-    Set<Entry<String, SecuritySchemeDefinition>> entrySet = securityDefinitions.entrySet();
-    for( Iterator<Entry<String, SecuritySchemeDefinition>> iterator = entrySet.iterator(); iterator
-      .hasNext(); )
-    {
-      Entry<String, SecuritySchemeDefinition> entry = ( Entry<String, SecuritySchemeDefinition> )iterator
-        .next();
-      String authSchemeName = entry.getKey();
-      SecuritySchemeDefinition authSchemeDefinition = entry.getValue();
-      authSchemeDefinition.setDescription( ( String )configuration
-        .get( SECURITY_DEFINITION_PREFIX + authSchemeName + ".description" ) );
-      // TODO vendor extension
-      if( authSchemeDefinition instanceof OAuth2Definition ) {
-        OAuth2Definition oauth2Def = ( OAuth2Definition )authSchemeDefinition;
-        configureOAuth2SecurityDefinition( oauth2Def, authSchemeName );
-      } else if( authSchemeDefinition instanceof ApiKeyAuthDefinition ) {
-        ApiKeyAuthDefinition apiKeyDef = ( ApiKeyAuthDefinition )authSchemeDefinition;
-        apiKeyDef.setName( ( String )configuration
-          .get( SECURITY_DEFINITION_PREFIX + authSchemeName + ".name" ) );
+    if( configuration != null ) {
+      determineConfiguredSecuritySchemeDefinitions( securityDefinitions );
+      Set<Entry<String, SecuritySchemeDefinition>> entrySet = securityDefinitions.entrySet();
+      for( Iterator<Entry<String, SecuritySchemeDefinition>> iterator = entrySet
+        .iterator(); iterator.hasNext(); )
+      {
+        Entry<String, SecuritySchemeDefinition> entry = ( Entry<String, SecuritySchemeDefinition> )iterator
+          .next();
+        String authSchemeName = entry.getKey();
+        SecuritySchemeDefinition authSchemeDefinition = entry.getValue();
+        authSchemeDefinition.setDescription( ( String )configuration
+          .get( SECURITY_DEFINITION_PREFIX + authSchemeName + ".description" ) );
+        // TODO vendor extension
+        if( authSchemeDefinition instanceof OAuth2Definition ) {
+          OAuth2Definition oauth2Def = ( OAuth2Definition )authSchemeDefinition;
+          configureOAuth2SecurityDefinition( oauth2Def, authSchemeName );
+        } else if( authSchemeDefinition instanceof ApiKeyAuthDefinition ) {
+          ApiKeyAuthDefinition apiKeyDef = ( ApiKeyAuthDefinition )authSchemeDefinition;
+          apiKeyDef.setName( ( String )configuration
+            .get( SECURITY_DEFINITION_PREFIX + authSchemeName + ".name" ) );
+        }
       }
     }
     return securityDefinitions;
