@@ -14,5 +14,5 @@ Import-Package: io.swagger.config;version="[1.5.7,2.0.0)",
  javax.servlet;version="[2.3.0,4.0.0)",
  javax.ws.rs.core;version="[2.0.0,3.0.0)",
  org.osgi.framework;version="[1.2.0,2.0.0)",
- org.osgi.service.cm;version="[1.2.0,2.0.0)"
+ org.osgi.service.cm;version="1.6.0"
 Export-Package: com.eclipsesource.jaxrs.provider.swagger

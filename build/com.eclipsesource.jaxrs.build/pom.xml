@@ -42,7 +42,7 @@
 		<module>../../bundles/com.eclipsesource.jaxrs.provider.sse</module>
 		<module>../../bundles/com.eclipsesource.jaxrs.provider.multipart</module>
 		<module>../../bundles/com.eclipsesource.jaxrs.provider.swagger</module>
-		<!-- Tests -->
+		<!--
 		<module>../../tests/com.eclipsesource.jaxrs.publisher.test</module>
 		<module>../../tests/com.eclipsesource.jaxrs.consumer.test</module>
 		<module>../../tests/com.eclipsesource.jaxrs.provider.gson.test</module>
@@ -50,6 +50,7 @@
 		<module>../../tests/com.eclipsesource.jaxrs.provider.sse.test</module>
 		<module>../../tests/com.eclipsesource.jaxrs.provider.multipart.test</module>
 		<module>../../tests/com.eclipsesource.jaxrs.provider.swagger.test</module>
+		-->
 		<!-- Features -->
 		<module>../com.eclipsesource.jaxrs.jersey.runtime.feature</module>
 		<module>../com.eclipsesource.jaxrs.connector.feature</module>
@@ -69,6 +70,18 @@
 			<layout>p2</layout>
 			<url>file:///${basedir}/../../build/com.eclipsesource.jaxrs.connector.target/p2</url>
 		</repository>
+		<repository>
+			<id>elexis-2021-03-java11</id>
+			<layout>p2</layout>
+			<url>https://download.elexis.info/elexis/target/2021-03-java11/</url>
+		</repository>
+		<repository>
+			<id>orbit</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20210223232630/repository/</url>
+		</repository>
+		
+
 	</repositories>
 
 	<build>

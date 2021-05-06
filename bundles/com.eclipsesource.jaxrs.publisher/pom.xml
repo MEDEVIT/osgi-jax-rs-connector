@@ -17,23 +17,6 @@
 
 	<build>
 		<plugins>
-			<!-- Configure FindBugs -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>${findbugs-version}</version>
-				<configuration>
-					<findbugsXmlOutput>true</findbugsXmlOutput>
-					<failOnError>false</failOnError>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			
       <plugin>
         <groupId>${tycho-groupid}</groupId>
